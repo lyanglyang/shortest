@@ -12,7 +12,9 @@
     "db:migrate": "npx tsx lib/db/migrate.ts",
     "db:studio": "drizzle-kit studio",
     "stripe:webhooks": "stripe listen --forward-to http://localhost:3000/api/stripe/webhook",
-    "test": "vitest"
+    "test": "vitest --run",
+    "test:coverage": "vitest run --coverage",
+    "report:codeclimate": "cc-test-reporter < ./coverage/lcov.info"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^0.0.50",
@@ -74,9 +76,10 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^2.1.4",
     "happy-dom": "^15.7.4",
     "jsdom": "^25.0.1",
     "smee-client": "^2.0.3",
-    "vitest": "^2.1.1"
+    "vitest": "^2.1.4"
   }
 }

@@ -8,5 +8,11 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: ["./test/setup.ts"],
+    watch: false,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov', 'json', 'html'],
+      reportsDirectory: './coverage',
+    },
   },
 });
